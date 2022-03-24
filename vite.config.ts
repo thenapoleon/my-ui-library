@@ -5,6 +5,7 @@ import dts from 'vite-plugin-dts'
 const path = require("path");
 
 export default defineConfig({
+  // dts to automatically output types in dist
   plugins: [reactRefresh(), dts()],
   resolve: {
     alias: {

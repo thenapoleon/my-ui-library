@@ -1,64 +1,19 @@
-1. create react library
-    `npm init vite@latest my-ui-library -- --template react-ts`
+# UI Component library
 
-    `npm i --save-dev @types/node`
+## Getting Started
 
-    `npm i --save-dev @vitejs/plugin-react-refresh`
+`npm run build`
+`npm run storybook`
 
-2. vite config:
+# What's in it?
 
-```
-import { defineConfig } from "vite";
-import reactRefresh from "@vitejs/plugin-react-refresh";
+- react components
+- tailwind css
+- storybook 
+- vite
+- npm packaging, publishing
+- typescript
 
-const path = require("path");
+# important notes
 
-export default defineConfig({
-  plugins: [reactRefresh()],
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
-      name: "UI LIBRARY",
-      fileName: (format) => `ui-lib.${format}.js`,
-    },
-    rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled into your library
-      external: ["react", "react-dom"],
-    },
-  },
-});
-```
-
-2. set build output
-
-package.json
-```json
-{
-    ...
-    "main": "./dist/ui-lib.umd.js",
-    "module": "./dist/ui-lib.es.js",
-}
-```
-
-3. storybook
-
-`npx sb init --builder storybook-builder-vite`
-
-fix main:
-
-.storybook/main.js 
-
-```javascript
-module.exports = {
-  ...
-  async viteFinal(config) {
-    return {
-      ...config,
-      define: {
-        ...config.define,
-        global: "window",
-      },
-    };
-  }
-
-```
+- chech the various configs of each fmks as they contain specific fixes.

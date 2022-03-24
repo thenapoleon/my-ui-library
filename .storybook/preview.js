@@ -1,3 +1,4 @@
+// import required for tailwind css base import
 import "../src/styles/tailwind.css";
 
 export const parameters = {

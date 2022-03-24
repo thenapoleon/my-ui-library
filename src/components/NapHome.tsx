@@ -1,4 +1,6 @@
 import { HomeProps } from "./NapHome.types";
+// if not present getting a weird error in nextjs saying that 'React' is not found
+import React from "react";
 
 const products = [
     {
