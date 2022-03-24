@@ -18,6 +18,9 @@
     "declaration": true,
     "baseUrl": ".",
   },
+  "paths": {
+    "@/*": ["src/*"]
+  },
   "include": ["src", "*.d.ts"],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
