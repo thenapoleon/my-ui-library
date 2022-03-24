@@ -1,1 +1,3 @@
-export { default as Home } from "./components/Home";
+export { NapHome } from './components/NapHome';
+export { SecondComponent } from './components/SecondComponent';
+export type { SecondProps } from './components/SecondComponent.types';

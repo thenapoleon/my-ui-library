@@ -1,14 +1,20 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
+import dts from 'vite-plugin-dts'
 
 const path = require("path");
 
 export default defineConfig({
-  plugins: [reactRefresh()],
+  plugins: [reactRefresh(), dts()],
+  resolve: {
+    alias: {
+      '@/': new URL('./src/', import.meta.url).pathname,
+    },
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "UI LIBRARY",
+      name: "nap-ui-library",
       fileName: (format) => `ui-lib.${format}.js`,
     },
     rollupOptions: {
